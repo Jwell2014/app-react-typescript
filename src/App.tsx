@@ -2,8 +2,6 @@ import React, {FunctionComponent, useEffect, useState } from 'react';
 import "./styles/App.css";
 import Pokemon from './models/pokemon';
 import listPokemon from './models/listPokemon'
-// import Article from './components/Articles';
-// import Panier from './components/Panier'
 
 
 const App: FunctionComponent = () => {
@@ -15,15 +13,28 @@ const App: FunctionComponent = () => {
   }, [] )
 
   return(
-    <>
-    <div>POKEDEX</div>
-    <p>Vous avez 
-      { pokemons.length } Pokemons
-      </p>
-      
-     
-     
-      </>
+    <div>
+      <h1 className='center'>POKÉDEX</h1>
+      <div className='container'>
+        <div className='row'>
+          {pokemons.map(({id, name, picture, created}) =>
+          (<div className='col s6 m4' key={id}>
+            <div className='card horizontal'> 
+              <div className='card-image'>
+                <img src={picture} alt={name}/>
+              </div> 
+              <div className='card-started'>
+                <div className='card-content'>
+                  <p>{name}</p>
+                  <p><small>{created.toString()}</small></p>
+                </div>
+              </div>
+            </div>
+          </div>)
+          )}
+        </div>
+      </div>
+    </div>
   )
 }
 
