@@ -1,13 +1,12 @@
 import React, {FunctionComponent } from 'react';
 import "./styles/App.css";
 import PokemonList from './pages/pokemon-list';
-import {BrowserRouter as Router, Route, Link, Routes } from  'react-router-dom';
+import { Route, Link, Routes} from 'react-router-dom';
 import PokemonDetail from './pages/pokemon-detail';
-import Pokemon from './models/pokemon';
 
 
 const App: FunctionComponent = () => {
-
+  
   return( 
     
  
@@ -20,9 +19,7 @@ const App: FunctionComponent = () => {
     <Routes>
      <Route path='/' element={<PokemonList/>}/>
      <Route path='/pokemons' element={<PokemonList/>}/>
-     <Route path='/pokemons/:id' element={<PokemonDetail />}/>
-
-
+     <Route path="/pokemons/:id" element={<PokemonDetail />}/>
     </Routes>
     </div>
 
