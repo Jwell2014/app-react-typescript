@@ -24,6 +24,8 @@ const PokemonDetail: FunctionComponent = () => {
         })
     }, [id])
 
+  
+
     return (
     
         <div>
@@ -34,6 +36,9 @@ const PokemonDetail: FunctionComponent = () => {
                 <div className="card hoverable"> 
                   <div className="card-image">
                     <img src={pokemon.picture} alt={pokemon.name} style={{width: '250px', margin: '0 auto'}}/>
+                    <Link to={`/pokemons/edit/${pokemon.id}`} className="btn btn-floating halfway-fab waves-effect waves-light">
+                      <i className="material-icons" >edit</i>
+                    </Link>
                   </div>
                   <div className="card-stacked">
                     <div className="card-content">
